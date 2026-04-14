@@ -319,6 +319,26 @@
     max-width: 340px;
     line-height: 1.5;
   }
+  .demo-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 1rem;
+    padding: 0.55rem 1.1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(0,229,160,0.3);
+    background: rgba(0,229,160,0.07);
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: background 0.2s, border-color 0.2s;
+    width: fit-content;
+  }
+  .demo-btn:hover {
+    background: rgba(0,229,160,0.14);
+    border-color: rgba(0,229,160,0.55);
+  }
 
   /* PRICING */
   .pricing-grid {
@@ -586,7 +606,7 @@
 <section id="services">
   <div class="container fade-in">
     <div class="section-label">Что делаю</div>
-    <h2 class="section-title">Автоматизация<br>любых процессов</h2>
+    <h2 class="section-title">Боты, мини-приложения<br>и лендинги</h2>
     <p class="section-sub">Если в твоём бизнесе есть что-то, что делается вручную и повторяется каждый день — скорее всего, это можно автоматизировать.</p>
     <div class="services-grid">
       <div class="service-item">
@@ -618,6 +638,16 @@
         <div class="service-icon">🔗</div>
         <h4>Интеграции</h4>
         <p>Подключение сторонних сервисов, вебхуки, API. Бот любой сложности под любую задачу.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">📱</div>
+        <h4>Telegram Mini Apps</h4>
+        <p>Полноценные веб-приложения внутри Telegram. Красивый интерфейс, интерактив, интеграция с ботом — без выхода из мессенджера.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">🌐</div>
+        <h4>Одностраничные лендинги</h4>
+        <p>Быстрый и чистый landing page под продукт, услугу или курс. Адаптив, CTA, нужный стек — под ключ.</p>
       </div>
     </div>
   </div>
@@ -655,6 +685,10 @@
             <span class="stack-tag">Resend</span>
           </div>
           <div class="case-value">Полная автоматизация продажи и доставки курса без участия владельца</div>
+          <a href="https://t.me/demomoodbot" target="_blank" class="demo-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.48 14.517l-2.95-.924c-.64-.203-.654-.64.135-.954l11.57-4.461c.537-.194 1.006.131.328.07z"/></svg>
+            Смотреть демо
+          </a>
         </div>
       </div>
 
