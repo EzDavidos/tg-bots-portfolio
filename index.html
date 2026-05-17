@@ -708,6 +708,55 @@
     flex-wrap: wrap;
   }
 
+  /* PROOF */
+  .proof-layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+    margin-top: 2rem;
+  }
+  .proof-screenshot {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .proof-screenshot img {
+    width: 100%; height: auto; display: block;
+  }
+  .proof-callouts {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .proof-callout {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.1rem 1.25rem;
+  }
+  .proof-callout-num {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 0.35rem;
+    letter-spacing: -0.01em;
+  }
+  .proof-callout-text {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .proof-note {
+    margin-top: 2rem;
+    font-size: 13px;
+    color: var(--muted2);
+    font-style: italic;
+    line-height: 1.6;
+  }
+
   /* FAQ */
   .faq-grid {
     display: flex;
@@ -842,6 +891,10 @@
     .author-layout { grid-template-columns: 1fr; gap: 1.5rem; }
     .author-photo { max-width: 220px; }
     .author-text { font-size: 14px; }
+
+    /* proof mobile */
+    .proof-layout { grid-template-columns: 1fr; gap: 1.25rem; }
+    .proof-screenshot { max-width: 320px; }
 
     /* fp section mobile */
     .fp-layout { grid-template-columns: 1fr; gap: 2rem; }
@@ -1293,6 +1346,40 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="proof">
+  <div class="container fade-in">
+    <div class="section-label">Социальные доказательства</div>
+    <h2 class="section-title">Как живёт<br>«100ловая» сейчас.</h2>
+    <p class="section-sub">Не отзыв с фотостока. Скрин обратной связи из админки магазина — собирается прямо в боте после каждого заказа.</p>
+
+    <div class="proof-layout">
+      <div class="proof-screenshot">
+        <img src="images/100lovaya-feedback.jpg" alt="Обратная связь покупателей в админке 100ловой" loading="lazy">
+      </div>
+      <div class="proof-callouts">
+        <div class="proof-callout">
+          <div class="proof-callout-num">№17 → №120</div>
+          <div class="proof-callout-text">Реальная нумерация заказов через бот за ~3 недели — не моки, не «концепция».</div>
+        </div>
+        <div class="proof-callout">
+          <div class="proof-callout-num">2 канала</div>
+          <div class="proof-callout-text">Заказы идут и «из бота», и «из приложения» (Mini App). Оба сценария работают параллельно.</div>
+        </div>
+        <div class="proof-callout">
+          <div class="proof-callout-num">Сегментация отзывов</div>
+          <div class="proof-callout-text">Отзывы фильтруются по настроению — владелец сразу видит, на что реагировать в первую очередь.</div>
+        </div>
+        <div class="proof-callout">
+          <div class="proof-callout-num">Ответ одной кнопкой</div>
+          <div class="proof-callout-text">На любой отзыв владелец отвечает прямо из админки — клиент получает сообщение в Telegram.</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="proof-note">Прямой отзыв владельца «100ловой» — в работе, добавим, когда получим. Пока — то, что видно из живой системы.</p>
   </div>
 </section>
 
