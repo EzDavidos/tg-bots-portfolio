@@ -666,6 +666,48 @@
     line-height: 1.65;
   }
 
+  /* AUTHOR */
+  .author-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+    margin-top: 2rem;
+  }
+  .author-photo {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .author-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+  }
+  .author-name {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.01em;
+  }
+  .author-text {
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+  }
+  .author-text strong { color: var(--accent); font-weight: 700; }
+  .author-text:last-of-type { margin-bottom: 1.75rem; }
+  .author-links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
   /* CTA */
   .cta-section {
     background: var(--surface);
@@ -747,6 +789,11 @@
     .cta-section { padding: 2.5rem 1.5rem; }
     .case-features { grid-template-columns: 1fr; }
 
+    /* author mobile */
+    .author-layout { grid-template-columns: 1fr; gap: 1.5rem; }
+    .author-photo { max-width: 220px; }
+    .author-text { font-size: 14px; }
+
     /* fp section mobile */
     .fp-layout { grid-template-columns: 1fr; gap: 2rem; }
     .fp-phone-wrap { position: static; }
@@ -769,6 +816,7 @@
     <a href="#services">Услуги</a>
     <a href="#demo">Демо</a>
     <a href="#pricing">Цены</a>
+    <a href="#author">Автор</a>
     <a href="#contact">Контакт</a>
   </div>
   <a href="https://t.me/ezdavido" target="_blank" class="nav-cta">Написать</a>
@@ -1164,6 +1212,35 @@
         <div class="step-content">
           <h4>Запуск и поддержка</h4>
           <p>Боевой запуск с вашими клиентами, мониторинг первой недели. Дальше — 30 дней гарантии на сданный код, либо переходим на ежемесячную поддержку для развития продукта.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="author">
+  <div class="container fade-in">
+    <div class="section-label">Об авторе</div>
+    <h2 class="section-title">Кто соберёт<br>вашего бота.</h2>
+
+    <div class="author-layout">
+      <div class="author-photo">
+        <img src="images/david.jpg" alt="David Naumenko" loading="lazy">
+      </div>
+      <div class="author-content">
+        <div class="author-name">David Naumenko · Нячанг</div>
+
+        <p class="author-text"><strong>Self-made разработчик</strong> из Украины, частный гид. Веду собственный продукт «100ловая» — Telegram-магазин для доставки еды в продакшне.</p>
+
+        <p class="author-text">Работаю гидом в Нячанге и вижу изнутри, как соседи по бизнесу теряют часы на переписке с клиентами: подтвердить запись, прислать время, напомнить за день, попросить отзыв. Туристы путаются, что-то забывается. Собрал первого бота — стало легче. Попросили коллеги. Потом пошли заказы из соседних ниш: доставка, мини-курсы, общепит.</p>
+
+        <p class="author-text">Работаю в режиме <strong>vibe-coding</strong>: AI делает черновую работу, я держу архитектуру и качество. Поэтому собираю Mini App за 2 недели, а не за 2 месяца. Это не «по-быстрому» — это другой темп работы.</p>
+
+        <p class="author-text">Работаю с СНГ и русскоязычной частью Юго-Восточной Азии — понимаю и общепит в Нячанге, и доставку в Киеве, и инфопродукт из Алматы.</p>
+
+        <div class="author-links">
+          <a href="https://t.me/ezdavido" target="_blank" class="btn-primary" style="display:inline-flex; align-items:center; gap:8px;">Telegram</a>
+          <a href="https://instagram.com/prostoo_david" target="_blank" class="btn-secondary" style="display:inline-flex; align-items:center; gap:8px;">Instagram</a>
         </div>
       </div>
     </div>
