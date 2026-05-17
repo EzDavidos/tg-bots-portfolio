@@ -53,6 +53,7 @@
   }
   .nav-logo span { color: var(--accent); }
   .nav-links { display: flex; gap: 2rem; justify-content: center; }
+  .nav-right { display: flex; align-items: center; gap: 0.75rem; justify-self: end; }
   .nav-links a {
     font-size: 14px;
     color: var(--muted);
@@ -72,6 +73,41 @@
     justify-self: end;
   }
   .nav-cta:hover { background: var(--accent2); transform: translateY(-1px); }
+
+  /* NAV BADGE */
+  @keyframes pulse-soft {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(0, 229, 160, 0.45); }
+    50% { box-shadow: 0 0 0 6px rgba(0, 229, 160, 0); }
+  }
+  .nav-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    background: rgba(0, 229, 160, 0.08);
+    border: 1px solid rgba(0, 229, 160, 0.32);
+    border-radius: 100px;
+    padding: 5px 12px;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    text-decoration: none;
+    animation: pulse-soft 2.8s ease-out infinite;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .nav-badge:hover {
+    background: rgba(0, 229, 160, 0.14);
+    border-color: rgba(0, 229, 160, 0.55);
+  }
+  .nav-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 6px var(--accent);
+    flex-shrink: 0;
+  }
 
   /* HERO */
   .hero {
@@ -209,14 +245,25 @@
   .service-item {
     background: var(--surface);
     padding: 2rem;
-    transition: background 0.2s;
+    transition: background 0.25s, transform 0.25s ease, border-color 0.25s;
+    border: 1px solid transparent;
+    border-radius: 12px;
   }
-  .service-item:hover { background: var(--surface2); }
+  .service-item:hover {
+    background: var(--surface2);
+    transform: translateY(-4px);
+    border-color: rgba(0, 229, 160, 0.25);
+  }
+  .service-item:hover .service-icon {
+    transform: scale(1.12) rotate(-4deg);
+    background: rgba(0, 229, 160, 0.2);
+  }
   .service-icon {
     width: 54px; height: 54px;
     background: rgba(0,229,160,0.1);
     border-radius: 12px;
     display: flex; align-items: center; justify-content: center;
+    transition: transform 0.3s ease, background 0.3s ease;
     margin-bottom: 1.2rem;
     font-size: 26px;
   }
@@ -239,9 +286,14 @@
     border: 1px solid var(--border);
     border-radius: 16px;
     padding: 2rem;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     transition: border-color 0.2s;
   }
-  .case-card:hover { border-color: rgba(0,229,160,0.25); }
+  .case-card:hover {
+    border-color: rgba(0,229,160,0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
+  }
   .case-head {
     display: flex; align-items: flex-start; justify-content: space-between;
     gap: 1rem; margin-bottom: 1.25rem;
@@ -957,9 +1009,12 @@
 
   /* MOBILE */
   @media (max-width: 640px) {
-    nav { padding: 1rem 1.25rem; display: flex; justify-content: space-between; align-items: center; }
+    nav { padding: 1rem 1.25rem; display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; }
     .nav-links { display: none; }
-    .nav-logo { font-size: 13px; max-width: 160px; }
+    .nav-logo { font-size: 13px; max-width: 130px; flex-shrink: 1; min-width: 0; }
+    .nav-right { gap: 0.5rem; flex-shrink: 0; }
+    .nav-badge { font-size: 11px; padding: 3px 9px; gap: 5px; }
+    .nav-badge::before { width: 5px; height: 5px; }
     .nav-cta { padding: 0.5rem 1rem; font-size: 13px; white-space: nowrap; }
     .hero { padding: 7rem 1.25rem 3rem; }
     section { padding: 4rem 1.25rem; }
@@ -1002,13 +1057,16 @@
     <a href="#author">Автор</a>
     <a href="#contact">Контакт</a>
   </div>
-  <a href="https://t.me/ezdavido" target="_blank" class="nav-cta">Написать</a>
+  <div class="nav-right">
+    <a href="#contact" class="nav-badge" aria-label="Открыт набор на 2 проекта в месяц, занято 0 из 2">Открыт набор 0/2</a>
+    <a href="https://t.me/ezdavido" target="_blank" class="nav-cta">Написать</a>
+  </div>
 </nav>
 
 <div class="hero">
   <div class="container">
     <div class="hero-tag">Открыт набор на 2 новых проекта в месяц</div>
-    <h1>Заказы<br>и запись клиентов —<br><span class="accent">автоматически.</span><br>Через Telegram.</h1>
+    <h1>Заказы<br>и запись клиентов&nbsp;—<br><span class="accent">автоматически.</span><br>Через Telegram.</h1>
     <p class="hero-sub">Боты и Mini Apps для доставок еды, кафе, тур-операторов — и любого бизнеса, где клиенты заказывают или записываются. Клиент открывает Telegram — заказ или бронь падает к вам уже готовой. Без прямого участия, без 25% комиссии агрегаторам, без менеджера на телефоне.</p>
     <div class="hero-actions">
       <a href="#demo" class="btn-primary">Посмотреть демо →</a>
@@ -1493,17 +1551,17 @@
 
       <details class="faq-item">
         <summary>Почему Telegram, а не сайт, WhatsApp или Instagram?</summary>
-        <div class="faq-answer">Telegram = без скачивания приложения, без регистраций, чат + оплата + Mini App в одном окне. Для бизнеса без своего сайта — дешевле в запуске и проще в росте. Для тех, у кого сайт уже есть — Telegram становится вторым каналом с более высокой конверсией за счёт меньшего трения. Это не «единственно верный путь», это правильный инструмент под конкретные задачи: приём заказов, запись, оплаты, рассылки.</div>
+        <div class="faq-answer">Telegram = без скачивания приложения, без регистраций, чат + оплата + Mini App в одном окне. Для бизнеса без своего сайта — дешевле в запуске и проще в росте. Для тех, у кого сайт уже есть — Telegram становится вторым каналом с более высокой конверсией за счёт меньшего трения. Это не «единственно верный путь», это удобный инструмент под конкретные задачи: приём заказов, запись, оплаты, рассылки.</div>
       </details>
 
       <details class="faq-item">
         <summary>У нас уже есть разработчик — можно сотрудничать?</summary>
-        <div class="faq-answer">Можно. Если у вас уже есть код — могу взяться за продуктовую часть (архитектура, UX, новые фичи), оставив техническую часть вашему специалисту. Если нужно «всё под ключ» — делаю целиком. Если предыдущий подрядчик «затянул на полгода и не отдаёт код» — это отдельный разговор, помогу аккуратно вытянуть наработки и не потерять данные.</div>
+        <div class="faq-answer">Можно. Если у вас уже есть код — могу взяться за продуктовую часть (архитектура, UX, новые фичи), оставив техническую часть вашему специалисту. Если нужно «всё под ключ» — делаю целиком. Если предыдущий подрядчик «затянул на полгода и не отдаёт код» — это отдельный разговор, помогу не потерять то, что уже сделано, и при этом закончить работу.</div>
       </details>
 
       <details class="faq-item">
         <summary>Вы один или это студия?</summary>
-        <div class="faq-answer">Один. AI в режиме vibe-coding = команда. Это значит, что я — bottleneck, и поэтому в Hero «открыт набор на 2 новых проекта в месяц». Если для вас приоритет «агентство с 20 людьми и аккаунт-менеджером» — я не подойду. Если приоритет — скорость, прямой контакт с разработчиком и решения без посредников — поехали.</div>
+        <div class="faq-answer">Один. AI в режиме vibe-coding = команда. Это значит, я работаю не на потоке — поэтому набор открыт всего на 2 проекта в месяц. Если для вас приоритет «агентство с 20 людьми и аккаунт-менеджером» — я не подойду. Если приоритет — скорость, прямой контакт с разработчиком и решения без посредников — можете записаться на созвон.</div>
       </details>
 
     </div>
@@ -1538,14 +1596,14 @@
           <div class="guarantee-icon">✓</div>
           <div class="guarantee-content">
             <h4>30 дней доработок по сданному ТЗ</h4>
-            <p>Если в течение 30 дней что-то работает не так, как было прописано в плане работ из шага 02 — переделываю без вопросов и доплаты.</p>
+            <p>Если в течение 30 дней что-то работает не так, как было прописано в плане работ из шага 02 — исправляю без вопросов и доплаты.</p>
           </div>
         </div>
 
       </div>
 
       <div class="guarantee-note">
-        <strong>Баг ≠ правка.</strong> Баг — это «работало → перестало». Правка — это «работало → хочу иначе». На багах обещаю бессрочно, на правках — первые несколько за счёт студии, дальше — на условиях ежемесячной поддержки.
+        <strong>Баг ≠ правка.</strong> Баг — это «работало → перестало». Правка — это «работало → надо изменить». На багах обещаю бессрочно, на правках — первые несколько за счёт студии, дальше — на условиях ежемесячной поддержки.
       </div>
     </div>
   </div>
@@ -1579,6 +1637,38 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Hero stat count-up
+  (function() {
+    const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+    const animateCount = (el, target, prefix, suffix, duration = 1400) => {
+      const start = performance.now();
+      const step = (now) => {
+        const p = Math.min((now - start) / duration, 1);
+        const value = Math.floor(target * easeOutCubic(p));
+        el.textContent = prefix + value + suffix;
+        if (p < 1) requestAnimationFrame(step);
+        else el.textContent = prefix + target + suffix;
+      };
+      requestAnimationFrame(step);
+    };
+    const statObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        if (el.dataset.counted) return;
+        el.dataset.counted = '1';
+        const raw = el.textContent.trim();
+        const m = raw.match(/^([×+\-]?)(\d+)([+\-]?)$/);
+        if (!m) return;
+        const [, prefix, num, suffix] = m;
+        el.textContent = prefix + '0' + suffix;
+        animateCount(el, parseInt(num, 10), prefix, suffix);
+        statObserver.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.hero-stat-num').forEach(el => statObserver.observe(el));
+  })();
 
   // Phone slider
   (function() {
