@@ -708,6 +708,56 @@
     flex-wrap: wrap;
   }
 
+  /* GUARANTEE */
+  .guarantee-card {
+    background: linear-gradient(160deg, rgba(0,229,160,0.06) 0%, var(--surface) 70%);
+    border: 1px solid rgba(0,229,160,0.3);
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin-top: 2rem;
+  }
+  .guarantee-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .guarantee-item {
+    display: flex;
+    gap: 1.1rem;
+    align-items: flex-start;
+  }
+  .guarantee-icon {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    flex-shrink: 0;
+    padding-top: 2px;
+    width: 28px;
+    text-align: center;
+  }
+  .guarantee-content h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+    letter-spacing: -0.01em;
+  }
+  .guarantee-content p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+  .guarantee-note {
+    margin-top: 1.75rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--muted2);
+    line-height: 1.6;
+  }
+  .guarantee-note strong { color: var(--muted); font-weight: 600; }
+
   /* PROOF */
   .proof-layout {
     display: grid;
@@ -1420,6 +1470,47 @@
         <div class="faq-answer">Один. AI в режиме vibe-coding = команда. Это значит, что я — bottleneck, и поэтому в Hero «открыт набор на 2 новых проекта в месяц». Если для вас приоритет «агентство с 20 людьми и аккаунт-менеджером» — я не подойду. Если приоритет — скорость, прямой контакт с разработчиком и решения без посредников — поехали.</div>
       </details>
 
+    </div>
+  </div>
+</section>
+
+<section id="guarantee">
+  <div class="container fade-in">
+    <div class="section-label">Гарантия</div>
+    <h2 class="section-title">Чиню бесплатно.<br>Даже через год.</h2>
+
+    <div class="guarantee-card">
+      <div class="guarantee-list">
+
+        <div class="guarantee-item">
+          <div class="guarantee-icon">∞</div>
+          <div class="guarantee-content">
+            <h4>Бессрочная гарантия на дефекты кода</h4>
+            <p>Если в боте через месяц, полгода или год вылезает баг по моей вине — фикшу бесплатно, без сроков давности. Условие одно: код не модифицировался вами или сторонним разработчиком. Если правки были — отдельно посмотрю, найдём решение.</p>
+          </div>
+        </div>
+
+        <div class="guarantee-item">
+          <div class="guarantee-icon">+</div>
+          <div class="guarantee-content">
+            <h4>Первые 2–3 мелкие правки — за мой счёт</h4>
+            <p>Когда бот сдан и работает — первые 2–3 «хочу ещё чуть-чуть» правки (передвинуть кнопку, поменять текст, добавить ещё один статус) вношу бесплатно. Большие фичи и регулярные доработки — по ежемесячной поддержке.</p>
+          </div>
+        </div>
+
+        <div class="guarantee-item">
+          <div class="guarantee-icon">✓</div>
+          <div class="guarantee-content">
+            <h4>30 дней доработок по сданному ТЗ</h4>
+            <p>Если в течение 30 дней что-то работает не так, как было прописано в плане работ из шага 02 — переделываю без вопросов и доплаты.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="guarantee-note">
+        <strong>Баг ≠ правка.</strong> Баг — это «работало → перестало». Правка — это «работало → хочу иначе». На багах обещаю бессрочно, на правках — первые несколько за счёт студии, дальше — на условиях ежемесячной поддержки.
+      </div>
     </div>
   </div>
 </section>
