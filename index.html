@@ -708,6 +708,55 @@
     flex-wrap: wrap;
   }
 
+  /* FAQ */
+  .faq-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+  .faq-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .faq-item[open] { border-color: var(--border2); }
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 1.1rem 1.4rem;
+    font-weight: 700;
+    font-size: 0.98rem;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    transition: color 0.2s;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+';
+    color: var(--accent);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item summary:hover { color: var(--accent); }
+  .faq-answer {
+    padding: 0 1.4rem 1.3rem;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .faq-answer strong { color: var(--text); font-weight: 600; }
+
   /* CTA */
   .cta-section {
     background: var(--surface);
@@ -1243,6 +1292,47 @@
           <a href="https://instagram.com/prostoo_david" target="_blank" class="btn-secondary" style="display:inline-flex; align-items:center; gap:8px;">Instagram</a>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container fade-in">
+    <div class="section-label">Вопросы</div>
+    <h2 class="section-title">Что обычно<br>спрашивают.</h2>
+
+    <div class="faq-grid">
+
+      <details class="faq-item">
+        <summary>Почему минимум $1400, а не $80, как у фрилансера на Kwork?</summary>
+        <div class="faq-answer">Цена закладывает то, что попадает в продакшн: бот с админкой, деплой на нормальный хостинг, гарантия и возможность подключить ежемесячную поддержку. Дешёвые боты обычно означают: нет админки, всё захардкожено в коде, деплой «по дружбе» на чьём-то ноутбуке, нет логов, и поменять цвет кнопки без разработчика невозможно. На лендинге нет дешёвой вилки, потому что я с ней не работаю — не хочу подводить ни вас, ни себя.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Сколько реально занимает запуск?</summary>
+        <div class="faq-answer"><strong>Стартер</strong> — 7–14 дней. <strong>Бизнес</strong> — 3–4 недели. <strong>Про</strong> — зависит от объёма интеграций, фиксируется на созвоне. Срок прописывается письменно в шаге 02 («План работ и фиксация цены») и не меняется в процессе. Если что-то идёт не по плану — предупреждаю заранее, не молчу до дедлайна.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Что если бот сломается после сдачи?</summary>
+        <div class="faq-answer">30 дней гарантии на сданный код — баги, всплывшие после запуска, фикшу бесплатно. После 30 дней либо живёте сами (код ваш, документация передана), либо переходите на ежемесячную поддержку. Внутри retainer-а критичные баги фикшу в течение дня (Базовый) или в течение нескольких часов (Расширенный+).</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Почему Telegram, а не сайт, WhatsApp или Instagram?</summary>
+        <div class="faq-answer">Telegram = без скачивания приложения, без регистраций, чат + оплата + Mini App в одном окне. Для бизнеса без своего сайта — дешевле в запуске и проще в росте. Для тех, у кого сайт уже есть — Telegram становится вторым каналом с более высокой конверсией за счёт меньшего трения. Это не «единственно верный путь», это правильный инструмент под конкретные задачи: приём заказов, запись, оплаты, рассылки.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>У нас уже есть разработчик — можно сотрудничать?</summary>
+        <div class="faq-answer">Можно. Если у вас уже есть код — могу взяться за продуктовую часть (архитектура, UX, новые фичи), оставив техническую часть вашему специалисту. Если нужно «всё под ключ» — делаю целиком. Если предыдущий подрядчик «затянул на полгода и не отдаёт код» — это отдельный разговор, помогу аккуратно вытянуть наработки и не потерять данные.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Вы один или это студия?</summary>
+        <div class="faq-answer">Один. AI в режиме vibe-coding = команда. Это значит, что я — bottleneck, и поэтому в Hero «открыт набор на 2 новых проекта в месяц». Если для вас приоритет «агентство с 20 людьми и аккаунт-менеджером» — я не подойду. Если приоритет — скорость, прямой контакт с разработчиком и решения без посредников — поехали.</div>
+      </details>
+
     </div>
   </div>
 </section>
