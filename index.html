@@ -655,15 +655,45 @@
     padding-top: 1px;
   }
   .step-content h4 {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     margin-bottom: 0.4rem;
     letter-spacing: -0.01em;
   }
   .step-content p {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--muted);
     line-height: 1.65;
+  }
+
+  /* PULSE BUTTON */
+  @keyframes pulse-glow {
+    0% {
+      box-shadow: 0 0 0 0 rgba(0, 229, 160, 0.55), 0 0 16px rgba(0, 229, 160, 0.45);
+    }
+    70% {
+      box-shadow: 0 0 0 14px rgba(0, 229, 160, 0), 0 0 26px rgba(0, 229, 160, 0.6);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(0, 229, 160, 0), 0 0 16px rgba(0, 229, 160, 0.45);
+    }
+  }
+  .btn-pulse {
+    animation: pulse-glow 2.2s ease-out infinite;
+  }
+  .pricing-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 1.25rem;
+  }
+
+  /* CLICKABLE FP PHONE */
+  .fp-phone-link { display: block; text-decoration: none; }
+  .fp-phone-link .fp-phone { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+  .fp-phone-link:hover .fp-phone {
+    transform: translateY(-3px);
+    box-shadow: 0 0 0 1px var(--accent), 0 12px 32px rgba(0, 229, 160, 0.18);
   }
 
   /* AUTHOR */
@@ -947,6 +977,7 @@
     .proof-screenshot { max-width: 320px; }
 
     /* fp section mobile */
+    #featured-project { padding: 4rem 1.25rem; }
     .fp-layout { grid-template-columns: 1fr; gap: 2rem; }
     .fp-phone-wrap { position: static; }
     .fp-phone { width: 180px; }
@@ -1021,7 +1052,7 @@
       <div class="service-item">
         <div class="service-icon">🛒</div>
         <h4>Приём заказов без вашего участия</h4>
-        <p>Клиент кладёт в корзину, оплачивает, получает подтверждение — без звонков и переписки. Заказ сразу падает к вам готовый к сборке.</p>
+        <p>Клиент выбирает товар, оформляет заказ через корзину и оплачивает товар или услугу. Остаётся только выполнить заказ — экономия от 1 часа в день.</p>
       </div>
       <div class="service-item">
         <div class="service-icon">📅</div>
@@ -1036,17 +1067,17 @@
       <div class="service-item">
         <div class="service-icon">📱</div>
         <h4>Свой канал продаж в Telegram</h4>
-        <p>Mini App с каталогом и оплатой — собственная витрина, без комиссии агрегаторам. Все заказы и клиенты остаются у вас.</p>
+        <p>Mini App с каталогом и оплатой — собственная витрина, без человека, который должен постоянно за ней следить.</p>
       </div>
       <div class="service-item">
         <div class="service-icon">⚙️</div>
         <h4>Один экран для всех заказов и клиентов</h4>
-        <p>Заявки, клиенты, заказы, статистика — в одном месте. Без Google-таблиц, мессенджеров и блокнотов.</p>
+        <p>Заказы, клиенты, статистика — в одном месте и всегда под рукой. Без таблиц, мессенджеров и заметок.</p>
       </div>
       <div class="service-item">
         <div class="service-icon">🔔</div>
         <h4>Авторассылки и напоминания</h4>
-        <p>Триггерные сообщения клиентам — статус заказа, напоминание о записи, акция. Массовые рассылки с сегментацией.</p>
+        <p>Автоматические сообщения клиентам — статус заказа, напоминание о записи, акция. Всё это без сложных систем.</p>
       </div>
     </div>
   </div>
@@ -1137,6 +1168,7 @@
 
       <!-- Телефон со слайдером -->
       <div class="fp-phone-wrap">
+        <a href="https://t.me/tmademobot_bot" target="_blank" class="fp-phone-link" aria-label="Открыть демо Mini App в Telegram">
         <div class="fp-phone">
           <div class="fp-screen">
             <div class="fp-slides">
@@ -1147,6 +1179,7 @@
             </div>
           </div>
         </div>
+        </a>
         <div class="fp-dots">
           <span class="fp-dot active" data-idx="0"></span>
           <span class="fp-dot" data-idx="1"></span>
@@ -1219,7 +1252,8 @@
   <div class="container fade-in">
     <div class="section-label">Стоимость</div>
     <h2 class="section-title">Прозрачные<br>цены</h2>
-    <p class="section-sub">Два формата работы: разработка под ключ + ежемесячная поддержка. Можно комбинировать или брать отдельно. Если не уверены, какой пакет подходит — опишите задачу, подберу.</p>
+    <p class="section-sub">Два формата работы: разработка под ключ + ежемесячная поддержка. Можно комбинировать или брать отдельно. Если не уверены, какой пакет подходит:</p>
+    <a href="https://t.me/ezdavido" target="_blank" class="btn-primary btn-pulse pricing-cta">Записаться на звонок →</a>
 
     <h3 style="font-size: 1.3rem; font-weight: 700; margin: 3rem 0 0.5rem; letter-spacing: -0.01em; color: var(--text);">Разработка под ключ</h3>
     <p style="font-size: 14px; color: var(--muted); margin-bottom: 1.5rem;">Один раз — за рабочий продукт в продакшене.</p>
@@ -1228,13 +1262,14 @@
 
       <div class="price-card">
         <div class="price-name">Стартер</div>
-        <div class="price-tagline">Один процесс под ключ за 7–14 дней</div>
+        <div class="price-tagline">Бот или мини-приложение под ключ за 7–14 дней</div>
         <div class="price-row">
           <span class="price-new">от $1400</span>
         </div>
         <div class="price-features">
-          <span class="price-feat">Приём заказов или запись клиентов</span>
+          <span class="price-feat">Приём заказов и запись клиентов</span>
           <span class="price-feat">Уведомления администратору</span>
+          <span class="price-feat">Рассылка</span>
           <span class="price-feat">Базовая админ-панель</span>
           <span class="price-feat">Деплой и запуск</span>
         </div>
@@ -1270,16 +1305,17 @@
           <span class="price-feat">Интеграции с CRM, ERP, телефонией, аналитикой</span>
           <span class="price-feat">Сложные сценарии и поведенческая логика</span>
           <span class="price-feat">Мультиязычность</span>
+          <span class="price-feat">Услуги профессионального дизайнера</span>
           <span class="price-feat">Деплой и запуск</span>
         </div>
-        <div class="price-support">30 дней гарантии на сданный код</div>
+        <div class="price-support">60 дней гарантии на сданный код</div>
         <a href="https://t.me/ezdavido" target="_blank" class="btn-secondary" style="justify-content:center; font-size:14px;">Записаться на созвон →</a>
       </div>
 
     </div>
 
     <h3 style="font-size: 1.3rem; font-weight: 700; margin: 4rem 0 0.5rem; letter-spacing: -0.01em; color: var(--text);">Ежемесячная поддержка</h3>
-    <p style="font-size: 14px; color: var(--muted); margin-bottom: 1.5rem;">Recurring — за стабильность и развитие продукта.</p>
+    <p style="font-size: 14px; color: var(--muted); margin-bottom: 1.5rem;">Подписка — за стабильность и развитие продукта.</p>
 
     <div class="pricing-grid">
 
@@ -1291,7 +1327,7 @@
         </div>
         <div class="price-features">
           <span class="price-feat">Контроль uptime и логов</span>
-          <span class="price-feat">Включено: до 3 ч мелких правок в месяц</span>
+          <span class="price-feat">Включено: до 5 ч правок в месяц</span>
           <span class="price-feat">Поддержка по тикетам</span>
           <span class="price-feat">Обновления при изменениях Telegram API</span>
         </div>
@@ -1341,29 +1377,29 @@
       <div class="process-step">
         <div class="step-num">01</div>
         <div class="step-content">
-          <h4>Созвон 20 минут</h4>
-          <p>Разбираем, что у вас сейчас работает руками и что можно отдать боту. Считаем, сколько времени и денег уходит на эту рутину сейчас. Если задача не подходит — скажу прямо. До этого момента — бесплатно.</p>
+          <h4>Созвон</h4>
+          <p>Бесплатный разбор вашей задачи. Углубляемся во все бизнес-процессы и находим, где теряется время и деньги. Предлагаем решения и объясняем, как всё будет работать.</p>
         </div>
       </div>
       <div class="process-step">
         <div class="step-num">02</div>
         <div class="step-content">
-          <h4>План работ и фиксация цены</h4>
-          <p>Письменный документ: что именно собираем, в какие сроки, за какие деньги, в каком порядке. Подписываете — стартуем, цена больше не меняется.</p>
+          <h4>План работы и фиксация цены</h4>
+          <p>После созвона в течение 2 дней высылаем резюме встречи и план работ: конкретные решения, цена, ориентировочные сроки. При взаимном согласии заключаем договор — цена в процессе работы не меняется.</p>
         </div>
       </div>
       <div class="process-step">
         <div class="step-num">03</div>
         <div class="step-content">
-          <h4>Сборка под вашими глазами</h4>
-          <p>Промежуточные демо каждые 2–3 дня. Открываете в Telegram, тестируете, говорите что поменять. Без сюрпризов в конце — финальная версия = тому, что вы видели последнюю неделю.</p>
+          <h4>Сборка в реальном времени</h4>
+          <p>Доступ к промежуточным демо-версиям. Открываете в Telegram, тестируете, говорите что поменять или добавить. В итоге после запуска требуется минимальное количество фиксов и правок.</p>
         </div>
       </div>
       <div class="process-step">
         <div class="step-num">04</div>
         <div class="step-content">
           <h4>Запуск и поддержка</h4>
-          <p>Боевой запуск с вашими клиентами, мониторинг первой недели. Дальше — 30 дней гарантии на сданный код, либо переходим на ежемесячную поддержку для развития продукта.</p>
+          <p>В течение первой недели активно следим за работой всех функций. Далее — 30 / 60 дней гарантии на код. При желании вы можете перейти на ежемесячную поддержку.</p>
         </div>
       </div>
     </div>
@@ -1384,11 +1420,11 @@
 
         <p class="author-text"><strong>Self-made разработчик</strong> из Украины, частный гид. Веду собственный продукт «100ловая» — Telegram-магазин для доставки еды в продакшне.</p>
 
-        <p class="author-text">Работаю гидом в Нячанге и вижу изнутри, как соседи по бизнесу теряют часы на переписке с клиентами: подтвердить запись, прислать время, напомнить за день, попросить отзыв. Туристы путаются, что-то забывается. Собрал первого бота — стало легче. Попросили коллеги. Потом пошли заказы из соседних ниш: доставка, мини-курсы, общепит.</p>
+        <p class="author-text">Живу в туристическом городе и вижу изнутри, как соседи по бизнесу теряют десятки часов на переписках с клиентами. Подтвердить запись, прислать время, напомнить за день, попросить отзыв — в общем, всегда надо быть на связи. Клиенты путаются, что-то забывается. И вот я уже собираю первого бота. Поступили заказы от коллег. Автоматизация оказалась нужна во многих нишах: доставка, курсы, общепит.</p>
 
-        <p class="author-text">Работаю в режиме <strong>vibe-coding</strong>: AI делает черновую работу, я держу архитектуру и качество. Поэтому собираю Mini App за 2 недели, а не за 2 месяца. Это не «по-быстрому» — это другой темп работы.</p>
+        <p class="author-text">Работаю в режиме <strong>vibe-coding</strong>: AI делает черновую работу, я держу архитектуру и качество. Благодаря этому собираю Mini App за 2 недели, а не за 2 месяца. При этом код чистый, безопасность настроена качественно, и бот работает без перебоев.</p>
 
-        <p class="author-text">Работаю с СНГ и русскоязычной частью Юго-Восточной Азии — понимаю и общепит в Нячанге, и доставку в Киеве, и инфопродукт из Алматы.</p>
+        <p class="author-text">В наше время AI делает большую часть рутины — но финальный результат всегда остаётся за человеком.</p>
 
         <div class="author-links">
           <a href="https://t.me/ezdavido" target="_blank" class="btn-primary" style="display:inline-flex; align-items:center; gap:8px;">Telegram</a>
@@ -1403,7 +1439,7 @@
   <div class="container fade-in">
     <div class="section-label">Социальные доказательства</div>
     <h2 class="section-title">Как живёт<br>«100ловая» сейчас.</h2>
-    <p class="section-sub">Не отзыв с фотостока. Скрин обратной связи из админки магазина — собирается прямо в боте после каждого заказа.</p>
+    <p class="section-sub">В приложение настроена обратная связь — здесь вы видите, что клиенты думают о качестве еды, услуге и сервисе. Отзывы собираются автоматически после каждого заказа.</p>
 
     <div class="proof-layout">
       <div class="proof-screenshot">
@@ -1412,11 +1448,11 @@
       <div class="proof-callouts">
         <div class="proof-callout">
           <div class="proof-callout-num">№17 → №120</div>
-          <div class="proof-callout-text">Реальная нумерация заказов через бот за ~3 недели — не моки, не «концепция».</div>
+          <div class="proof-callout-text">Реальная нумерация заказов через бот за ~3 недели — это не выдуманные данные и не «концепция», а живая система.</div>
         </div>
         <div class="proof-callout">
-          <div class="proof-callout-num">2 канала</div>
-          <div class="proof-callout-text">Заказы идут и «из бота», и «из приложения» (Mini App). Оба сценария работают параллельно.</div>
+          <div class="proof-callout-num">Двойной вход</div>
+          <div class="proof-callout-text">Клиенты заказывают и через чат с ботом, и через Mini App. Оба способа работают одновременно.</div>
         </div>
         <div class="proof-callout">
           <div class="proof-callout-num">Сегментация отзывов</div>
@@ -1424,7 +1460,7 @@
         </div>
         <div class="proof-callout">
           <div class="proof-callout-num">Ответ одной кнопкой</div>
-          <div class="proof-callout-text">На любой отзыв владелец отвечает прямо из админки — клиент получает сообщение в Telegram.</div>
+          <div class="proof-callout-text">На каждый отзыв можно ответить клиенту прямо в Telegram, не выходя из админки.</div>
         </div>
       </div>
     </div>
