@@ -259,10 +259,15 @@
   }
   .service-item {
     background: var(--surface);
-    padding: 2rem;
+    padding: 1.75rem;
     transition: background 0.25s, transform 0.25s ease, border-color 0.25s;
     border: 1px solid transparent;
     border-radius: 12px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 1.25rem;
+    row-gap: 0.5rem;
+    align-items: start;
   }
   .service-item:hover {
     background: var(--surface2);
@@ -270,23 +275,25 @@
     border-color: rgba(0, 229, 160, 0.25);
   }
   .service-item:hover .service-icon {
-    transform: scale(1.12) rotate(-4deg);
+    transform: scale(1.08) rotate(-4deg);
     background: rgba(0, 229, 160, 0.2);
   }
   .service-icon {
-    width: 54px; height: 54px;
+    width: 68px; height: 68px;
     background: rgba(0,229,160,0.1);
-    border-radius: 12px;
+    border-radius: 14px;
     display: flex; align-items: center; justify-content: center;
     transition: transform 0.3s ease, background 0.3s ease;
-    margin-bottom: 1.2rem;
-    font-size: 26px;
+    font-size: 34px;
+    grid-row: 1 / span 2;
+    flex-shrink: 0;
   }
   .service-item h4 {
     font-size: 18px;
     font-weight: 700;
-    margin-bottom: 0.65rem;
+    margin-bottom: 0;
     letter-spacing: -0.01em;
+    align-self: end;
   }
   .service-item p {
     font-size: 15px;
@@ -1152,6 +1159,18 @@
     .fp-badge { font-size: 11px; }
     .fp-stack .stack-tag { font-size: 11px; padding: 4px 8px; }
     .fp-feat-title { font-size: 11px; }
+
+    /* services mobile — back to vertical stack */
+    .service-item {
+      grid-template-columns: 1fr;
+      row-gap: 1rem;
+    }
+    .service-icon {
+      grid-row: auto;
+      width: 56px; height: 56px;
+      font-size: 28px;
+    }
+    .service-item h4 { align-self: auto; }
   }
 </style>
 </head>
