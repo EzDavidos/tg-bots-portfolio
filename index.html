@@ -574,6 +574,37 @@
   }
   .fp-stack { display: flex; flex-wrap: wrap; gap: 8px; }
 
+  /* "100ловая" brand palette for the case card */
+  .fp-content {
+    background: #FAF6F0;
+    border: 1px solid rgba(194, 78, 62, 0.28);
+    border-radius: 18px;
+    padding: 2rem 2.1rem;
+    color: #2A1E15;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  }
+  .fp-content .fp-badge {
+    background: rgba(194, 78, 62, 0.10);
+    border-color: rgba(194, 78, 62, 0.32);
+    color: #B5443A;
+  }
+  .fp-content .fp-desc {
+    color: #3a2a1f;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  .fp-content .fp-feat-title { color: #B5443A; }
+  .fp-content .fp-feat-col ul li {
+    color: #3a2a1f;
+    font-size: 15px;
+  }
+  .fp-content .fp-feat-col ul li::before { color: #B5443A; }
+  .fp-content .stack-tag {
+    background: rgba(194, 78, 62, 0.08);
+    border: 1px solid rgba(194, 78, 62, 0.22);
+    color: #6B3A2E;
+  }
+
   @media (max-width: 900px) {
     .fp-layout {
       grid-template-columns: 1fr;
@@ -794,24 +825,6 @@
   }
 
   /* AUTHOR */
-  #author {
-    position: relative;
-    isolation: isolate;
-  }
-  #author::before {
-    content: '';
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    width: min(720px, 90vw);
-    height: min(720px, 90vw);
-    transform: translate(-50%, -50%);
-    background: radial-gradient(circle, #00e5a0 0%, transparent 65%);
-    opacity: 0.08;
-    filter: blur(40px);
-    pointer-events: none;
-    z-index: -1;
-  }
   .author-layout {
     display: grid;
     grid-template-columns: 280px 1fr;
@@ -826,6 +839,7 @@
     overflow: hidden;
     border: 1px solid var(--border);
     background: var(--surface);
+    box-shadow: 0 0 90px 18px rgba(0, 229, 160, 0.32);
   }
   .author-photo img {
     width: 100%; height: 100%;
@@ -1153,12 +1167,13 @@
     .fp-phone-wrap { position: static; }
     .fp-phone { width: 180px; }
     .fp-slide-labels { width: 180px; }
-    .fp-features { grid-template-columns: 1fr; gap: 1rem; }
-    .fp-desc { font-size: 14px; }
-    .fp-feat-col ul li { font-size: 13px; }
-    .fp-badge { font-size: 11px; }
-    .fp-stack .stack-tag { font-size: 11px; padding: 4px 8px; }
-    .fp-feat-title { font-size: 11px; }
+    .fp-content { padding: 1.5rem 1.4rem; }
+    .fp-features { grid-template-columns: 1fr; gap: 1.2rem; }
+    .fp-content .fp-desc { font-size: 15.5px; }
+    .fp-content .fp-feat-col ul li { font-size: 14.5px; }
+    .fp-badge { font-size: 12px; padding: 6px 13px; }
+    .fp-stack .stack-tag { font-size: 12px; padding: 5px 10px; }
+    .fp-feat-title { font-size: 12px; }
 
     /* services mobile — back to vertical stack */
     .service-item {
