@@ -787,6 +787,24 @@
   }
 
   /* AUTHOR */
+  #author {
+    position: relative;
+    isolation: isolate;
+  }
+  #author::before {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: min(720px, 90vw);
+    height: min(720px, 90vw);
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, #00e5a0 0%, transparent 65%);
+    opacity: 0.08;
+    filter: blur(40px);
+    pointer-events: none;
+    z-index: -1;
+  }
   .author-layout {
     display: grid;
     grid-template-columns: 280px 1fr;
@@ -1445,7 +1463,7 @@
       </div>
 
       <div class="price-card">
-        <div class="price-name">Про</div>
+        <div class="price-name">MAX</div>
         <div class="price-tagline">Сложная логика, интеграции, кастом</div>
         <div class="price-row">
           <span class="price-new">от $7000</span>
