@@ -21,7 +21,7 @@
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
 
   body {
     background: var(--bg);
@@ -123,8 +123,8 @@
     position: absolute;
     top: 30%;
     left: 50%;
-    width: 720px;
-    height: 720px;
+    width: min(720px, 90vw);
+    height: min(720px, 90vw);
     transform: translate(-50%, -50%);
     background: radial-gradient(circle, #00e5a0 0%, transparent 65%);
     opacity: 0.08;
