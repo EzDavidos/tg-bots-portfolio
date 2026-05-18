@@ -1028,11 +1028,63 @@
 
   /* FOOTER */
   footer {
-    padding: 2rem;
-    text-align: center;
+    padding: 3.5rem 2rem 2rem;
+    border-top: 1px solid var(--border);
+    font-size: 14px;
+    color: var(--muted2);
+  }
+  .footer-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 2.5rem;
+  }
+  .footer-brand {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 0.6rem;
+  }
+  .footer-tagline {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 340px;
+  }
+  .footer-heading {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+  .footer-list { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+  .footer-list a {
+    color: var(--text);
+    font-size: 14px;
+    transition: color 0.2s;
+  }
+  .footer-list a:hover { color: var(--accent); }
+  .footer-bottom {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-top: 1.5rem;
     border-top: 1px solid var(--border);
     font-size: 13px;
     color: var(--muted2);
+    text-align: center;
+  }
+  @media (max-width: 720px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
   }
 
   /* ANIMATIONS */
@@ -1668,7 +1720,31 @@
 </section>
 
 <footer>
-  <p>© 2026 Bot creating studio by David Naumenko · Telegram-боты и автоматизация бизнеса</p>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Bot Creating Studio</div>
+      <p class="footer-tagline">Telegram-боты и Mini Apps, которые заменяют рутину приёма заказов, записей и отчётов. by David Naumenko.</p>
+    </div>
+    <div>
+      <div class="footer-heading">Разделы</div>
+      <ul class="footer-list">
+        <li><a href="#demo">Демо</a></li>
+        <li><a href="#pricing">Цены</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Контакт</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Контакты</div>
+      <ul class="footer-list">
+        <li><a href="https://t.me/ezdavido" target="_blank" rel="noopener">Telegram · @ezdavido</a></li>
+        <li><a href="https://instagram.com/prostoo_david" target="_blank" rel="noopener">Instagram · @prostoo_david</a></li>
+        <li><a href="https://github.com/EzDavidos" target="_blank" rel="noopener">GitHub · EzDavidos</a></li>
+        <li><a href="mailto:davidnaumenko9@gmail.com">davidnaumenko9@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Bot Creating Studio by David Naumenko</div>
 </footer>
 
 <script>
