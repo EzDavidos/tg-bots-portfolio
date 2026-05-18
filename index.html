@@ -847,15 +847,17 @@
     align-items: flex-start;
   }
   .guarantee-icon {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 1.4rem;
-    font-weight: 800;
     color: var(--accent);
-    line-height: 1;
     flex-shrink: 0;
-    padding-top: 2px;
     width: 28px;
-    text-align: center;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .guarantee-icon svg {
+    width: 100%;
+    height: 100%;
   }
   .guarantee-content h4 {
     font-size: 1rem;
@@ -1614,7 +1616,7 @@
       <div class="guarantee-list">
 
         <div class="guarantee-item">
-          <div class="guarantee-icon">∞</div>
+          <div class="guarantee-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.33-6 4Z"/></svg></div>
           <div class="guarantee-content">
             <h4>Бессрочная гарантия на дефекты кода</h4>
             <p>Если в боте через месяц, полгода или год вылезает баг по моей вине — фикшу бесплатно, без сроков давности. Условие одно: код не модифицировался вами или сторонним разработчиком. Если правки были — отдельно посмотрю, найдём решение.</p>
@@ -1622,7 +1624,7 @@
         </div>
 
         <div class="guarantee-item">
-          <div class="guarantee-icon">+</div>
+          <div class="guarantee-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
           <div class="guarantee-content">
             <h4>Первые 2–3 мелкие правки — за мой счёт</h4>
             <p>Когда бот сдан и работает — первые 2–3 «хочу ещё чуть-чуть» правки (передвинуть кнопку, поменять текст, добавить ещё один статус) вношу бесплатно. Большие фичи и регулярные доработки — по ежемесячной поддержке.</p>
@@ -1630,7 +1632,7 @@
         </div>
 
         <div class="guarantee-item">
-          <div class="guarantee-icon">✓</div>
+          <div class="guarantee-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
           <div class="guarantee-content">
             <h4>30 дней доработок по сданному ТЗ</h4>
             <p>Если в течение 30 дней что-то работает не так, как было прописано в плане работ из шага 02 — исправляю без вопросов и доплаты.</p>
