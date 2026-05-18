@@ -622,6 +622,17 @@
     border-color: rgba(0,229,160,0.35);
     background: linear-gradient(160deg, rgba(0,229,160,0.04) 0%, var(--surface) 60%);
   }
+  /* Retainer tier tints */
+  .pricing-grid--retainer .price-card:nth-child(1) {
+    background: linear-gradient(160deg, rgba(100,150,220,0.04) 0%, var(--surface) 60%);
+    border-color: rgba(100,150,220,0.2);
+  }
+  .pricing-grid--retainer .price-card:nth-child(1):hover { border-color: rgba(100,150,220,0.4); }
+  .pricing-grid--retainer .price-card:nth-child(3) {
+    background: linear-gradient(160deg, rgba(212,175,55,0.05) 0%, var(--surface) 60%);
+    border-color: rgba(212,175,55,0.25);
+  }
+  .pricing-grid--retainer .price-card:nth-child(3):hover { border-color: rgba(212,175,55,0.45); }
   .popular-badge {
     font-size: 11px;
     font-weight: 700;
@@ -1390,7 +1401,7 @@
     <h3 style="font-size: 1.3rem; font-weight: 700; margin: 4rem 0 0.5rem; letter-spacing: -0.01em; color: var(--text);">Ежемесячная поддержка</h3>
     <p style="font-size: 14px; color: var(--muted); margin-bottom: 1.5rem;">Подписка — за стабильность и развитие продукта.</p>
 
-    <div class="pricing-grid">
+    <div class="pricing-grid pricing-grid--retainer">
 
       <div class="price-card">
         <div class="price-name">Базовый</div>
